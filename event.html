@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="event-page" >
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="#"> <img src="images/logo.png" class="logo me-2">
+        <span>Axinora Vision Academy</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link " href="Index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="Blog.html">Blog</a></li>
+           <li class="nav-item"><a class="nav-link active" href="Event.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        </ul>
+        <a href="Login.html" class="btn-custom"><i class="bi bi-person-circle"></i> Login/Signup</a>
+      </div>
+    </div>
+
+  </nav>
+   <section class="breadcrumb-header text-light py-3">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0" id="breadcrumb-list">
+        <!-- Will be filled by JS -->
+      </ol>
+    </nav>
+  </div>
+</section>
+  <!-- Hero -->
+<header class="hero-event">
+  <h1 data-aos="fade-down" class="animate__animated animate__fadeInDown">Upcoming Events & Workshops</h1>
+  <p data-aos="fade-up" class="animate__animated animate__fadeInUp">Join inspiring bootcamps, workshops, and seminars to elevate your skills.</p>
+</header>
+
+<!-- Upcoming Events -->
+<main class="container my-5">
+  <div id="upcomingEvents" class="row g-4 "></div>
+  <div class="text-center">
+    <button id="loadMoreBtn" class="btn btn-sm btn-md load-more mt-3">Load More</button>
+  </div>
+</main>
+
+<!-- Past Events -->
+<section class="container my-5">
+  <h2 class="text-center text-gradient fw-bold mb-4" data-aos="fade-up">Past Events & Highlights</h2>
+  <div id="pastEvents" class="row g-4"></div>
+</section>
+
+<!-- Event Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 id="modalTitle" class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3" style="max-height:400px;object-fit:cover;">
+        <p id="modalDesc"></p>
+        <div class="text-end mt-3">
+          <a id="modalRegister" class="btn btn-sm btn-md btn-custom" href="#">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+      <img id="lightboxImg" src="" alt="Past Event" class="img-fluid rounded">
+    </div>
+  </div>
+</div>
+ 
+
+
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Axinora Vision Academy</h2>
+          <p>Regd office: <br> Branch office: <br> Phone: <br> Mail:</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Quick Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h2>Follow Us</h2>
+          <a href="#"><i class="bi bi-facebook fs-1 "></i></a>
+          <a href="#"><i class="bi bi-instagram fs-1 ms-2"></i></a>
+          <a href="#"><i class="bi bi-whatsapp fs-1 ms-2"></i></a>
+          <a href="#"><i class="bi bi-linkedin fs-1 ms-2"></i></a>
+        </div>
+      </div>
+      <hr class="bg-light">
+      <p class="text-center">&copy; 2025 Axinora Vision Academy. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+    
+</body>
+</html>
