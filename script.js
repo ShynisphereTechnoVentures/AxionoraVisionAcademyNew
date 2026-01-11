@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "about.html": "About Us",
     "courses.html": "Courses",
     "event.html": "Events",
-    "fellowship.html": "Axinora Fellowship",
+    "fellowship.html": "Axionora Fellowship",
     "contact.html": "Contact",
     "blog.html": "Blog"
   };
