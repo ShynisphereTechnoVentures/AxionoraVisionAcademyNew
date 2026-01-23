@@ -73,14 +73,11 @@ function showLogin() {
 // =================== COURSES PAGE ===================
 if (document.body.classList.contains("courses-page")) {
   const courses = [
-    { title: "HTML & CSS Mastery", category: "development", img: "", desc: "Learn the building blocks of web development.", rating: 4.8, price: "₹999" },
-    { title: "JavaScript Essentials", category: "development", img: "", desc: "Master interactivity and dynamic web features.", rating: 5.0, price: "₹1299" },
-    { title: "Python for Beginners", category: "data", img: "", desc: "Start your coding journey with Python basics.", rating: 4.7, price: "₹1499" },
-    { title: "React JS Development", category: "development", img: "", desc: "Build powerful single-page apps with React.", rating: 4.9, price: "₹1999" },
-    { title: "UI/UX Design", category: "design", img: "", desc: "Craft engaging, user-friendly digital experiences.", rating: 4.8, price: "₹1799" },
-    { title: "Data Science with Python", category: "data", img: "", desc: "Analyze, visualize, and predict with data.", rating: 5.0, price: "₹2499" },
-    { title: "Bootstrap 5 Advanced", category: "development", img: "", desc: "Build responsive layouts with ease.", rating: 4.7, price: "₹999" },
-    { title: "Graphic Design Fundamentals", category: "design", img: "", desc: "Unleash creativity using Photoshop & Illustrator.", rating: 4.8, price: "₹1899" },
+    { title: "IELTS Mastery Program", category: "development", img: "images/courses/ielts.png", desc: "An exam-focused IELTS training program covering Listening, Reading, Writing, and Speaking modules.Designed to help learners achieve higher band scores with confidence.", rating: 4.8, modules:"10 modules",duration:"7 months" },
+    { title: "Digital Productivity Skills", category: "development", img: "images/courses/dps.png", desc: "A workplace readiness program covering MS Word, Excel, PowerPoint, fast typing, and productivity tools. Ideal for students and office professionals", rating: 5.0, modules: "10 modules", duration: "7 months" },
+    { title: "Professional Communication", category: "data", img: "images/courses/pc.png", desc: "This program improves spoken English, professional etiquette, interview communication, and workplace confidence through practical sessions.", rating: 4.7, modules: "10 modules", duration: "7 months" },
+    { title: "Tech Career Launchpad – Full Stack Web Development", category: "development", img: "images/courses/fullstack.png", desc: "A beginner-to-intermediate program covering front-end, back-end, and basic deployment concepts with project-based learning.", rating: 4.9, modules: "10 modules", duration: "7 months" },
+    { title: "Full Stack .NET Development", category: "development", img: "images/courses/dotnet.png", desc: "Build complete full-stack web applications with .NET, including backend logic, databases, and responsive front-end integration.", rating: 4.9, modules: "10 modules", duration: "7 months" }
   ];
 
   const container = document.getElementById("courseContainer");
@@ -112,9 +109,12 @@ if (document.body.classList.contains("courses-page")) {
             <div class="course-body">
               <div>
                 <h3 class="course-title">${c.title}</h3>
+                <div class="d-flex align-items-center mb-2 justify-content-between fs-3">
+                  <div><i class="bi bi-file-earmark-text"></i> ${c.modules}</div>
+                  <div><i class="bi bi-clock"></i> ${c.duration}</div>
+                  <div><i class="bi bi-star-fill text-warning"></i> ${c.rating}</div>
+                </div>
                 <p class="course-info">${c.desc}</p>
-                <div class="rating mb-2">★★★★★ <span class="text-muted">(${c.rating})</span></div>
-                <p class="price mb-3">${c.price}</p>
               </div>
               <a href="#" class="btn-custom"><i class="bi bi-mortarboard-fill"></i> Enroll Now</a>
             </div>
@@ -194,7 +194,7 @@ if (document.body.classList.contains("blog-page")) {
         (b, i) => `
         <div class="col-md-4" data-aos="fade-up" data-aos-delay="${i * 100}">
           <div class="blog-card">
-            <img src="${b.img}" alt="${b.title}">
+            <img src="${b.img}" alt="test">
             <div class="blog-body">
               <span class="blog-category">${b.category}</span>
               <h5 class="blog-title">${b.title}</h5>
@@ -225,7 +225,7 @@ if (document.body.classList.contains("blog-page")) {
 
   renderBlogs();
 }
-
+// event page
 if (document.body.classList.contains("event-page")) {
 
   const EVENTS = [
@@ -258,7 +258,7 @@ if (document.body.classList.contains("event-page")) {
     <div class="mt-5 card border-0 shadow-sm event-card animate__animated animate__fadeInUp" data-aos="fade-up">
       <div class="row g-0 align-items-center">
         <div class="col-md-5">
-          <img src="${event.image}" class="img-fluid rounded-start" alt="${event.title}">
+          <img src="${event.image}" class="img-fluid rounded-start" alt="test">
         </div>
         <div class="col-md-7">
           <div class="card-body d-flex flex-column justify-content-between h-100">
@@ -331,21 +331,21 @@ document.addEventListener("DOMContentLoaded", () => {
     pageNames[path] ||
     path.replace(".html", "").replace(/[-_]/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 
-  // ✅ use sessionStorage so it resets when browser is refreshed
+  //  use sessionStorage so it resets when browser is refreshed
   let trail = JSON.parse(sessionStorage.getItem("breadcrumbTrail")) || ["Home"];
 
-  // ✅ avoid duplicates
+  // avoid duplicates
   if (!trail.includes(pageTitle)) {
     trail.push(pageTitle);
   }
 
-  // ✅ always ensure Home is first
+  //  always ensure Home is first
   if (trail[0] !== "Home") trail.unshift("Home");
 
-  // ✅ save breadcrumb trail only for this session
+  // save breadcrumb trail only for this session
   sessionStorage.setItem("breadcrumbTrail", JSON.stringify(trail));
 
-  // ✅ render breadcrumb
+  //  render breadcrumb
   breadcrumbList.innerHTML = trail
     .map((item, index) => {
       const fileName = Object.keys(pageNames).find(key => pageNames[key] === item);

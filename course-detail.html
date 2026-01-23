@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail | Axinora Vision Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo">Axinora Vision Academy</a>
+    </header>
+
+    <!-- COURSE DETAIL SECTION -->
+    <section class="course-detail container">
+        <div class="course-detail-left">
+            <h1 id="course-title">Course Name</h1>
+            <p class="course-category" id="course-category">Category</p>
+            <p id="course-description">Course description goes here...</p>
+
+            <div class="course-meta">
+                <div><strong>Duration:</strong> <span id="course-duration">N/A</span></div>
+                <div><strong>Level:</strong> <span id="course-level">Beginner</span></div>
+                <div><strong>Lectures:</strong> <span id="course-lectures">0</span></div>
+                <div><strong>Fee:</strong> ₹<span id="course-fee">0</span></div>
+            </div>
+
+            <button class="btn btn-primary" id="enrollBtn">Enroll Now</button>
+        </div>
+
+        <div class="course-detail-right">
+            <img src="" id="course-image" alt="Course image">
+        </div>
+    </section>
+
+    <!-- REVIEWS / SYLLABUS (optional) -->
+    <section class="course-extra container">
+        <h2>Course Syllabus</h2>
+        <ul id="course-syllabus" class="syllabus-list"></ul>
+    </section>
+
+    <script src="course-detail.js"></script>
+</body>
+</html>
